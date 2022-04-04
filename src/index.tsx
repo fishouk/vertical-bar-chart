@@ -1,16 +1,23 @@
 import React from "react";
 
+import { ThemeProvider } from "@emotion/react";
 import ReactDOM from "react-dom";
 import { BrowserRouter } from "react-router-dom";
+
+import { theme } from "assets/styles/theme";
 
 import { App } from "./App";
 import { reportWebVitals } from "./reportWebVitals";
 
+import "assets/styles/global";
+
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+    <ThemeProvider theme={theme}>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </ThemeProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );
